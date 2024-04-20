@@ -15,7 +15,7 @@ pipeline {
             steps{ 
                  sh '''
                  echo " Building docker image"
-                 docker build -t sivasuribabu/todo-app:${BUILD_NUMBER}
+                 docker build -t sivasuribabu/todo-app:${BUILD_NUMBER} .
                  '''
             }  
         }
