@@ -13,6 +13,11 @@ pipeline {
            	sh 'echo passed'
            }
         }
+
+        stage('biuld docker image'){
+            sh ' docker build -t todo-app .'
+        }
+        
       
     }
 }
