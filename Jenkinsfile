@@ -16,7 +16,7 @@ pipeline {
                  sh 'docker build -t todo-app .'
             }  
         }
-        stage('SAST"){
+        stage('SAST'){
               environment {
                   SONAR_URL = "http://192.168.225.162:9000"
               }
