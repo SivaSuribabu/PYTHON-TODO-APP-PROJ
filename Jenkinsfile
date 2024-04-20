@@ -15,7 +15,9 @@ pipeline {
         }
 
         stage('biuld docker image'){
-            sh ' docker build -t todo-app .'
+            steps{ 
+                 sh 'docker build -t todo-app .'
+            }  
         }
         
       
