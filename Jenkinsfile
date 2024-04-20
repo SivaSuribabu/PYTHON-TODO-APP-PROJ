@@ -20,6 +20,9 @@ pipeline {
             }  
         }
         stage('pushing docker image'){
+            environment{
+                REGISTRY_CREDENTIALS = credentials('docker-cred')
+            }
             steps{
             sh '''
             echo "pushing the image to dockerhub"
