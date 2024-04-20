@@ -20,12 +20,11 @@ pipeline {
             }  
         }
         stage('pushing docker image'){
-            environment{
-                REGISTRY_CREDENTIALS = credentials('docker-cred')
-            }
             steps{
+                withCredentials([usernamePassword(credentialsId: 'docker-cred', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')])
             sh '''
             echo "pushing the image to dockerhub"
+            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             docker push sivasuribabu/todo-app:${BUILD_NUMBER}
             '''  
             }
