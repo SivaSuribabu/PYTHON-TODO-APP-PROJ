@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: todo-app
-        image: sivasuribabu/todo-app:replaceImageTag
+        image: sivasuribabu/todo-app:32
         ports:
         - containerPort: 8080
