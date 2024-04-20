@@ -42,8 +42,8 @@ pipeline {
                     git config user.email "sivasuribabupenkey@gmail.com"
                     git config user.name "Siva Suribabu"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" PYTHON-TODO-APP-PROJ/deploy/deploy.yaml
-                    git add PYTHON-TODO-APP-PROJ/deploy/deploy.yaml
+                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" PYTHON-TODO-APP-PROJ/deploy/deploy.yml
+                    git add PYTHON-TODO-APP-PROJ/deploy/deploy.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     '''
