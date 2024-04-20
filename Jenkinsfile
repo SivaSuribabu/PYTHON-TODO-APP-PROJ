@@ -31,7 +31,7 @@ pipeline {
             }
         }
 
-      stage(updating deployment file'){
+      stage('updating deployment file'){
             environment {
                 GIT_REPO_NAME = "PYTHON-TODO-APP-PROJ"
                 GIT_USER_NAME = "SivaSuribabu"
