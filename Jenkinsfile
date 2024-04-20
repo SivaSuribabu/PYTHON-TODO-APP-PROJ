@@ -13,12 +13,15 @@ pipeline {
         }
         stage('biuld docker image'){
             steps{ 
-                 sh 'docker build -t todo-app .'
+                 sh '''
+                 echo " Building docker image"
+                 docker build -t sivasuribabu/todo-app:${BUILD_NUMBER}
+                 '''
             }  
         }
         stage('pushing docker image'){
             steps{
-              sh '''
+            sh '''
             echo "pushing the image to dockerhub"
             docker push sivasuribabu/todo-app:${BUILD_NUMBER}
             '''  
