@@ -20,7 +20,7 @@ pipeline {
             steps{
               sh '''
             echo "pushing the image to dockerhub"
-            dicker push sivasuribabu/PYTHON-TODO-APP-PROJ:${BUILD_NUMBER}
+            docker push sivasuribabu/PYTHON-TODO-APP-PROJ:${BUILD_NUMBER}
             '''  
             }
         }
